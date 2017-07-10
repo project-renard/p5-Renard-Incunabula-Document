@@ -8,6 +8,7 @@ use Renard::Incunabula::Common::Types qw(
 	PositiveOrZeroInt Str LaxPageNumber
 	InstanceOf );
 use Type::Utils qw( declare as where message );
+use Module::Load;
 
 my $Outline = declare
 	as ArrayRef[Dict[
@@ -103,8 +104,7 @@ has tree_store => (
 
 method _build_tree_store() {
 	# load Gtk3 dynamically if used outside Gtk3 context
-	require Gtk3;
-	Gtk3->import(qw(-init));
+	load 'Gtk3', '-init';
 
 	my $data = Gtk3::TreeStore->new( 'Glib::String', 'Glib::String', );
 
