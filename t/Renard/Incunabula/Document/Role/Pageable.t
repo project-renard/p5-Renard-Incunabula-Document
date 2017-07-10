@@ -3,10 +3,10 @@
 use Test::Most tests => 1;
 
 use lib 't/lib';
-use CurieTestHelper;
+use Renard::Incunabula::Devel::TestHelper;
 
 subtest "Cairo document model" => sub {
-	my $cairo_doc = CurieTestHelper->create_cairo_document;
+	my $cairo_doc = Renard::Incunabula::Devel::TestHelper->create_cairo_document;
 
 	my @valid_pages = qw(1 2 3 4);
 	my @invalid_pages = qw(0 -1 aa 5 2.0);

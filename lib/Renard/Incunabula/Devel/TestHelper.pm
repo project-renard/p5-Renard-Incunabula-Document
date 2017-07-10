@@ -1,10 +1,12 @@
 use Renard::Incunabula::Common::Setup;
-package CurieTestHelper;
+package Renard::Incunabula::Devel::TestHelper;
+# ABSTRACT: A test helper with functions useful for various Renard distributions
+
 use Renard::Incunabula::Common::Types qw(CodeRef InstanceOf Maybe PositiveInt DocumentModel Dir Tuple);
 
 =func test_data_directory
 
-  CurieTestHelper->test_data_directory
+  Renard::Incunabula::Devel::TestHelper->test_data_directory
 
 Returns a L<Path::Class> object that points to the path defined by
 the environment variable C<RENARD_TEST_DATA_PATH>.
@@ -24,7 +26,7 @@ classmethod test_data_directory() :ReturnType(Dir) {
 
 =func create_cairo_document
 
-  CurieTestHelper->create_cairo_document
+  Renard::Incunabula::Devel::TestHelper->create_cairo_document
 
 Returns a L<Renard::Incunabula::Format::Cairo::ImageSurface::Document> which can be
 used for testing.

@@ -3,14 +3,14 @@
 use Test::Most tests => 1;
 
 use lib 't/lib';
-use CurieTestHelper;
+use Renard::Incunabula::Devel::TestHelper;
 
 use Renard::Incunabula::Common::Setup;
 use Renard::Incunabula::Page::RenderedFromPNG;
 
 subtest "Process arguments for PDF file" => sub {
 	my $png_path = try {
-		CurieTestHelper->test_data_directory->child(qw(PNG libpng ccwn3p08.png));
+		Renard::Incunabula::Devel::TestHelper->test_data_directory->child(qw(PNG libpng ccwn3p08.png));
 	} catch {
 		plan skip_all => "$_";
 	};
