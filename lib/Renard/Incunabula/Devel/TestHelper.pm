@@ -2,7 +2,7 @@ use Renard::Incunabula::Common::Setup;
 package Renard::Incunabula::Devel::TestHelper;
 # ABSTRACT: A test helper with functions useful for various Renard distributions
 
-use Renard::Incunabula::Common::Types qw(CodeRef InstanceOf Maybe PositiveInt DocumentModel Dir Tuple);
+use Renard::Incunabula::Common::Types qw(Dir);
 
 =func test_data_directory
 

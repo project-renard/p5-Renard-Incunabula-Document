@@ -36,6 +36,7 @@ Type::Libraries->setup_class(
 =for :list
 * L<Types::Standard>
 * L<Types::Path::Tiny>
+* L<Types::URI>
 * L<Types::Common::Numeric>
 
 =cut
