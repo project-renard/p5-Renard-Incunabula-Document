@@ -4,22 +4,19 @@
 
 =head1 NAME
 
-Renard::Incunabula - The base library for Project Renard
+Renard::Incunabula::Document - Base class for representing documents
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
-=head1 DESCRIPTION
+=head1 EXTENDS
 
-This library contains various modules that can be used throughout other parts
-of Project Renard.  Among these is L<Renard::Incunabula::Common::Setup> which
-provides an easy way to export commonly used features such as use of
-L<Function::Parameters> for function signatures and type-checking.
+=over 4
 
-=head1 SEE ALSO
+=item * L<Moo::Object>
 
-L<Repository information|http://project-renard.github.io/doc/development/repo/p5-Renard-Incunabula/>
+=back
 
 =head1 AUTHOR
 

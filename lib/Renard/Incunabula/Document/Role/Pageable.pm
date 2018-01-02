@@ -3,7 +3,8 @@ package Renard::Incunabula::Document::Role::Pageable;
 # ABSTRACT: Role for documents that have numbered pages
 
 use Moo::Role;
-use Renard::Incunabula::Common::Types qw(PageNumber PageCount Bool);
+use Renard::Incunabula::Common::Types qw(Bool);
+use Renard::Incunabula::Document::Types qw(PageNumber PageCount);
 use MooX::Lsub;
 
 =attr first_page_number

@@ -1,45 +1,18 @@
 use Renard::Incunabula::Common::Setup;
-package Renard::Incunabula::Common::Types;
-# ABSTRACT: Type library
+package Renard::Incunabula::Document::Types;
+# ABSTRACT: Type library for document types
 
 use Type::Library 0.008 -base,
 	-declare => [qw(
 		DocumentModel
-		RenderableDocumentModel
 		PageNumber
 		PageCount
 		LaxPageNumber
 		ZoomLevel
-		SizeRequest
 	)];
 use Type::Utils -all;
 
-# Listed here so that scan-perl-deps can find them
-use Types::Path::Tiny      ();
-use Types::URI             ();
-use Types::Standard        qw(Tuple);
 use Types::Common::Numeric qw(PositiveInt PositiveOrZeroInt PositiveNum);
-
-use Type::Libraries;
-Type::Libraries->setup_class(
-	__PACKAGE__,
-	qw(
-		Types::Standard
-		Types::Path::Tiny
-		Types::URI
-		Types::Common::Numeric
-	)
-);
-
-=head1 TYPE LIBRARIES
-
-=for :list
-* L<Types::Standard>
-* L<Types::Path::Tiny>
-* L<Types::URI>
-* L<Types::Common::Numeric>
-
-=cut
 
 =type DocumentModel
 
@@ -48,24 +21,6 @@ A type for any reference that extends L<Renard::Incunabula::Document>.
 =cut
 class_type "DocumentModel",
 	{ class => "Renard::Incunabula::Document" };
-
-=type RenderableDocumentModel
-
-A type for any reference that does
-L<Renard::Incunabula::Document::Role::Renderable>.
-
-=cut
-role_type "RenderableDocumentModel",
-	{ role => "Renard::Incunabula::Document::Role::Renderable" };
-
-=type RenderablePageModel
-
-A type for any reference that does
-L<Renard::Incunabula::Page::Role::CairoRenderable>.
-
-=cut
-role_type "RenderablePageModel",
-	{ role => "Renard::Incunabula::Page::Role::CairoRenderable" };
 
 =type PageNumber
 
@@ -100,13 +55,5 @@ The amount to zoom in on a page. This is a multiplier such that
 
 =cut
 declare "ZoomLevel", parent => PositiveNum;
-
-=type SizeRequest
-
-A tuple that represents a size request for a widget.
-
-=cut
-declare "SizeRequest",
-	parent => Tuple[PositiveInt,PositiveInt];
 
 1;
