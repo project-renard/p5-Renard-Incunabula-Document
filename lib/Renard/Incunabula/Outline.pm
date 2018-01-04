@@ -5,8 +5,9 @@ package Renard::Incunabula::Outline;
 use Moo;
 use Renard::Incunabula::Common::Types qw(
 	ArrayRef Dict
-	PositiveOrZeroInt Str LaxPageNumber
+	PositiveOrZeroInt Str
 	InstanceOf );
+use Renard::Incunabula::Document::Types qw(LaxPageNumber);
 use Type::Utils qw( declare as where message );
 use Module::Load;
 
