@@ -18,6 +18,10 @@ version 0.004
 
 =back
 
+=head1 SEE ALSO
+
+L<Repository information|http://project-renard.github.io/doc/development/repo/p5-Renard-Incunabula-Document/>
+
 =head1 AUTHOR
 
 Project Renard
