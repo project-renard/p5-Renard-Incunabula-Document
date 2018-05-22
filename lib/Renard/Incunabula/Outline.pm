@@ -6,7 +6,8 @@ use Moo;
 use Renard::Incunabula::Common::Types qw(
 	ArrayRef Dict
 	PositiveOrZeroInt Str
-	InstanceOf );
+	InstanceOf
+	Optional);
 use Renard::Incunabula::Document::Types qw(LaxPageNumber);
 use Type::Utils qw( declare as where message );
 use Module::Load;
@@ -15,7 +16,7 @@ my $Outline = declare
 	as ArrayRef[Dict[
 			level => PositiveOrZeroInt,
 			text => Str,
-			page => LaxPageNumber
+			page => Optional[LaxPageNumber]
 		]];
 my $OutlineLevelCheck = declare
 	as $Outline,
