@@ -5,7 +5,7 @@ package Renard::Incunabula::Document::Role::Pageable;
 use Moo::Role;
 use Renard::Incunabula::Common::Types qw(Bool);
 use Renard::Incunabula::Document::Types qw(PageNumber PageCount);
-use MooX::Lsub;
+use MooX::ShortHas;
 
 =attr first_page_number
 
@@ -52,11 +52,11 @@ method is_valid_page_number( $page_number ) :ReturnType(Bool) {
 Calculates the number of pages between the C<first_page_number> and C<last_page_number>.
 
 =cut
-lsub number_of_pages => method() {
+lazy number_of_pages => method() {
 	(PageCount)->(
 		$self->last_page_number - $self->first_page_number + 1
 	);
-};
+}, isa => PageCount;
 
 
 1;
